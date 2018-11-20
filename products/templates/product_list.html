@@ -1,6 +1,24 @@
 {% extends "theme.html" %}
 
 {% block content %}
-<h3>这是产品界面</h3>
+<div class="container">
+
+{% for product in products.all %}
+	<div class="row" style="padding:7px" >
+		<div class="card" style="width: 9rem;">
+			<img class="card-img-top" src="{{ product.icon.url }}" alt="Card image cap">
+		</div>
+		<div class="col-md-8" style="padding-left:30px">
+			<h3><a href="products/{{ product.id }}">{{product.title}}</a></h3>
+			<br>
+			{{product.short_intro}}
+		</div>
+	</div>
+{% endfor %}
+</div>
+
 {% endblock content %}
 
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.icon.url }}" alt="Card image cap">
+</div>

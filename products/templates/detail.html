@@ -1,0 +1,24 @@
+{% extends "theme.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="row" style="padding:7px" >
+		<div class="card" style="width: 12rem;">
+			<img class="card-img-top" src="{{ product.icon.url }}" alt="Card image cap">
+		</div>
+		<div class="col-md-8" style="padding-left:30px">
+			<h3>标题：{{product.title}}</h3>
+			<br>
+			介绍：{{product.intro}}		
+		</div>
+	</div>
+	<div style="padding:7px">
+		APP链接：<a href="{{product.url}}">{{product.url}}</a>
+		<br>
+		发布时间：{{product.pub_date}}
+		<br>
+		投票数：{{product.vote}}
+	</div>
+</div>
+	
+{% endblock content %}
