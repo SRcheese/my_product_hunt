@@ -1,0 +1,50 @@
+{% extends "theme.html" %}
+
+{% block content %}
+<div class="container">
+  <br>
+  <h2>注册Product Hunt账号</h2>
+  <br>
+  <form action="{% url '注册页面' %}" method="POST" >
+    {% csrf_token %}
+    <!--用户名：
+    <input type="text" name="用户名">
+    <br>
+    <br>
+    密码：
+    <input type="password" name="密码">
+    <br>
+    <br>
+    确定密码：
+    <input type="password" name="确认密码">
+    <br>
+    <br>
+    <input class="btn btn-priamry" type="submit" value='立即注册'>-->
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">用户名：</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" placeholder="username" name="UserName">
+        <br>
+        {{用户名错误}}
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">密码：</label>
+      <div class="col-sm-6">
+        <input type="password" class="form-control" placeholder="Password" name="Password">
+        <br>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">确认密码：</label>
+      <div class="col-sm-6">
+        <input type="password" class="form-control" placeholder="Password" name="PasswordAgain">
+        <br>
+        {{密码错误}}
+      </div>
+    </div>
+    <input class="btn btn-priamry" type="submit" value='立即注册'>
+  </form>
+</div>
+
+{% endblock content %}
